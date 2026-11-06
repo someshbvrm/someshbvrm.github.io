@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The values in %%...%% are filled in automatically from src/data/profile.js at build time. -->
+    <title>%%TITLE%%</title>
+    <meta name="description" content="%%DESCRIPTION%%" />
+    <meta name="keywords" content="%%KEYWORDS%%" />
+    <meta name="author" content="%%NAME%%" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#060a13" />
+    <link rel="canonical" href="%%URL%%/" />
+
+    <!-- Open Graph (LinkedIn, Facebook, WhatsApp previews) -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="%%NAME%%" />
+    <meta property="og:title" content="%%TITLE%%" />
+    <meta property="og:description" content="%%DESCRIPTION%%" />
+    <meta property="og:url" content="%%URL%%/" />
+    <meta property="og:image" content="%%URL%%/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="%%TITLE%%" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="%%TITLE%%" />
+    <meta name="twitter:description" content="%%DESCRIPTION%%" />
+    <meta name="twitter:image" content="%%URL%%/og-image.jpg" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">%%JSONLD%%</script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding: 24px; font-family: sans-serif; color: #e8eef8; background: #060a13">
+        %%NAME%% — %%DESCRIPTION%%
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

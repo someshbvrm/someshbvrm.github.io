@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://someshbvrm.github.io/sitemap.xml
