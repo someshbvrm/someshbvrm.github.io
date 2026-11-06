@@ -9,7 +9,6 @@
 
 const experience = [
   {
-    company: 'Pristair Technologies Pvt. Ltd.',
     role: 'Azure Data Engineer',
     period: 'Dec 2021 – Present',
     location: 'Bengaluru (Remote)',
@@ -50,7 +49,6 @@ const experience = [
     ],
   },
   {
-    company: 'JoulesToWatts Business Solutions Pvt. Ltd.',
     role: 'Senior Cloud Engineer',
     period: 'Mar 2021 – Nov 2021',
     location: 'Bengaluru',
@@ -79,7 +77,6 @@ const experience = [
     ],
   },
   {
-    company: 'Tech Neon Solutions Pvt. Ltd.',
     role: 'SQL Developer',
     period: 'Aug 2017 – Jul 2020',
     location: 'Hyderabad',

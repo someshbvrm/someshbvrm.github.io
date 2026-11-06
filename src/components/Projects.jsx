@@ -71,6 +71,11 @@ export default function Projects() {
                   <Icon name="github" size={16} /> View repository <Icon name="arrowRight" size={16} />
                 </a>
               ) : null}
+              {p.live ? (
+                <a href={p.live} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm project-cta">
+                  Live results <Icon name="arrowRight" size={16} />
+                </a>
+              ) : null}
             </Reveal>
           ))}
         </div>

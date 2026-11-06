@@ -20,9 +20,11 @@ function ExperienceItem({ job, index }) {
         <header className="timeline-head">
           <div>
             <h3 className="timeline-role">{job.role}</h3>
-            <p className="timeline-company">
-              <Icon name="briefcase" size={16} /> {job.company}
-            </p>
+            {job.company ? (
+              <p className="timeline-company">
+                <Icon name="briefcase" size={16} /> {job.company}
+              </p>
+            ) : null}
           </div>
           <div className="timeline-meta">
             {job.current ? <span className="badge badge-live">Current</span> : null}
@@ -87,7 +89,7 @@ export default function Experience() {
         />
         <ol className="timeline">
           {experience.map((job, i) => (
-            <ExperienceItem key={`${job.company}-${job.period}`} job={job} index={i} />
+            <ExperienceItem key={`${job.role}-${job.period}`} job={job} index={i} />
           ))}
         </ol>
       </div>
