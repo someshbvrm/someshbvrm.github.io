@@ -4,6 +4,7 @@ import profile from '../data/profile.js';
 import socialLinks from '../data/socialLinks.js';
 import certifications from '../data/certifications.js';
 import { resumeUrl } from '../utils/resume.js';
+import { openResume } from './ResumeViewer.jsx';
 
 export default function Hero() {
   const featuredCert = certifications.find((c) => c.featured) || certifications[0];
@@ -31,7 +32,7 @@ export default function Hero() {
           <p className="hero-intro">{profile.intro}</p>
 
           <div className="hero-cta">
-            <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            <a href={resumeUrl} onClick={openResume} className="btn btn-primary">
               <Icon name="external" size={18} /> View Resume
             </a>
             <a href="#contact" className="btn btn-ghost">
