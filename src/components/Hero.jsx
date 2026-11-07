@@ -3,7 +3,7 @@ import PipelineVisual from './PipelineVisual.jsx';
 import profile from '../data/profile.js';
 import socialLinks from '../data/socialLinks.js';
 import certifications from '../data/certifications.js';
-import { resumeUrl, resumeDownloadName } from '../utils/resume.js';
+import { resumeUrl } from '../utils/resume.js';
 
 export default function Hero() {
   const featuredCert = certifications.find((c) => c.featured) || certifications[0];
@@ -31,8 +31,8 @@ export default function Hero() {
           <p className="hero-intro">{profile.intro}</p>
 
           <div className="hero-cta">
-            <a href={resumeUrl} download={resumeDownloadName} className="btn btn-primary">
-              <Icon name="download" size={18} /> Download Resume
+            <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              <Icon name="external" size={18} /> View Resume
             </a>
             <a href="#contact" className="btn btn-ghost">
               Contact Me <Icon name="arrowRight" size={18} />
