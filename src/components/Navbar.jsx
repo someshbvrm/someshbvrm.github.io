@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Icon from './Icon.jsx';
 import navigation from '../config/navigation.js';
 import profile from '../data/profile.js';
-import { resumeUrl, resumeDownloadName } from '../utils/resume.js';
+import { resumeUrl } from '../utils/resume.js';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -64,15 +64,15 @@ export default function Navbar() {
             </li>
           ))}
           <li className="nav-cta-mobile">
-            <a href={resumeUrl} download={resumeDownloadName} className="btn btn-primary btn-block">
-              <Icon name="download" size={18} /> Download Resume
+            <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-block">
+              <Icon name="external" size={18} /> View Resume
             </a>
           </li>
         </ul>
 
         <div className="nav-actions">
-          <a href={resumeUrl} download={resumeDownloadName} className="btn btn-ghost btn-sm nav-resume">
-            <Icon name="download" size={16} /> Resume
+          <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm nav-resume">
+            <Icon name="external" size={16} /> Resume
           </a>
           <button
             type="button"
