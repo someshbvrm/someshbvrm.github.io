@@ -4,6 +4,7 @@ import SectionHeader from './SectionHeader.jsx';
 import profile from '../data/profile.js';
 import socialLinks from '../data/socialLinks.js';
 import { resumeUrl } from '../utils/resume.js';
+import { openResume } from './ResumeViewer.jsx';
 
 export default function Contact() {
   return (
@@ -31,7 +32,7 @@ export default function Contact() {
               <a href={`mailto:${socialLinks.email}`} className="btn btn-primary">
                 <Icon name="send" size={18} /> Send an Email
               </a>
-              <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+              <a href={resumeUrl} onClick={openResume} className="btn btn-ghost">
                 <Icon name="external" size={18} /> View Resume
               </a>
             </div>
