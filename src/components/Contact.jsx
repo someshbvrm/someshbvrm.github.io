@@ -3,7 +3,7 @@ import Reveal from './Reveal.jsx';
 import SectionHeader from './SectionHeader.jsx';
 import profile from '../data/profile.js';
 import socialLinks from '../data/socialLinks.js';
-import { resumeUrl, resumeDownloadName } from '../utils/resume.js';
+import { resumeUrl } from '../utils/resume.js';
 
 export default function Contact() {
   return (
@@ -31,8 +31,8 @@ export default function Contact() {
               <a href={`mailto:${socialLinks.email}`} className="btn btn-primary">
                 <Icon name="send" size={18} /> Send an Email
               </a>
-              <a href={resumeUrl} download={resumeDownloadName} className="btn btn-ghost">
-                <Icon name="download" size={18} /> Download Resume
+              <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+                <Icon name="external" size={18} /> View Resume
               </a>
             </div>
           </div>
