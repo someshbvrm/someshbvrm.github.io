@@ -3,6 +3,7 @@ import Icon from './Icon.jsx';
 import navigation from '../config/navigation.js';
 import profile from '../data/profile.js';
 import { resumeUrl } from '../utils/resume.js';
+import { openResume } from './ResumeViewer.jsx';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -64,14 +65,21 @@ export default function Navbar() {
             </li>
           ))}
           <li className="nav-cta-mobile">
-            <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-block">
+            <a
+              href={resumeUrl}
+              onClick={(e) => {
+                setOpen(false);
+                openResume(e);
+              }}
+              className="btn btn-primary btn-block"
+            >
               <Icon name="external" size={18} /> View Resume
             </a>
           </li>
         </ul>
 
         <div className="nav-actions">
-          <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm nav-resume">
+          <a href={resumeUrl} onClick={openResume} className="btn btn-ghost btn-sm nav-resume">
             <Icon name="external" size={16} /> Resume
           </a>
           <button
