@@ -8,6 +8,7 @@ import Certifications from './components/Certifications.jsx';
 import Education from './components/Education.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import ResumeViewer from './components/ResumeViewer.jsx';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <ResumeViewer />
     </>
   );
 }
