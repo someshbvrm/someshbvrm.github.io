@@ -106,6 +106,7 @@
   position: relative;
   flex: 1;
   overflow: auto;
+  scrollbar-gutter: stable;
   padding: 16px 16px 88px;
   background: var(--bg-alt);
   overscroll-behavior: contain;
