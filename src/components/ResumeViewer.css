@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Resume viewer (in-page PDF reader, no download button)
+   Used by src/components/ResumeViewer.jsx
+   ========================================================================== */
+.rv-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(2, 6, 14, 0.78);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  animation: rv-fade 0.2s ease;
+}
+
+.rv-modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(1000px, 100%);
+  height: min(92vh, 100%);
+  background: var(--surface-solid);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: rv-rise 0.25s ease;
+}
+
+.rv-backdrop.is-max {
+  padding: 0;
+}
+
+.rv-backdrop.is-max .rv-modal {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+}
+
+.rv-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px 12px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.rv-title {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 0;
+}
+
+.rv-title h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.rv-count {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.rv-head-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.rv-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.rv-icon-btn:hover:not(:disabled) {
+  background: rgba(34, 211, 238, 0.08);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.rv-icon-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.rv-scroll {
+  position: relative;
+  flex: 1;
+  overflow: auto;
+  padding: 16px 16px 88px;
+  background: var(--bg-alt);
+  overscroll-behavior: contain;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.rv-pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: max-content;
+  min-width: 100%;
+}
+
+.rv-page {
+  display: block;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 12px 32px -14px rgba(0, 0, 0, 0.7);
+}
+
+.rv-status {
+  margin: 48px auto;
+  text-align: center;
+  color: var(--muted);
+}
+
+.rv-toolbar {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 5px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: rgba(15, 23, 41, 0.92);
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.rv-toolbar .rv-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+}
+
+.rv-zoom {
+  min-width: 54px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.rv-divider {
+  width: 1px;
+  height: 20px;
+  margin: 0 4px;
+  background: var(--border-strong);
+}
+
+@keyframes rv-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes rv-rise {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 640px) {
+  .rv-backdrop {
+    padding: 0;
+  }
+
+  .rv-modal {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rv-backdrop,
+  .rv-modal {
+    animation: none;
+  }
+}
+
+@media print {
+  .rv-backdrop {
+    display: none !important;
+  }
+}
